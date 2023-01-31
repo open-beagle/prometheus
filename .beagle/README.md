@@ -14,10 +14,17 @@ git merge upstream/release-2.41
 ```bash
 docker run -ti --rm \
 -v /usr/local/share/.cache/yarn:/usr/local/share/.cache/yarn \
--v $PWD/:/go/src/github.com/prometheus/prometheus \
--w /go/src/github.com/prometheus/prometheus \
-registry.cn-qingdao.aliyuncs.com/wod/devops-node:14.18.1-bullseye \
-bash -c 'cd web/ui && yarn && yarn build'
+-v $PWD/web/ui/react-app:/go/src/github.com/prometheus/prometheus/web/ui/react-app \
+-w /go/src/github.com/prometheus/prometheus/web/ui/react-app \
+registry.cn-qingdao.aliyuncs.com/wod/devops-node:v16.18.1-bullseye \
+yarn && yarn build
+
+docker run -ti --rm \
+-v /usr/local/share/.cache/yarn:/usr/local/share/.cache/yarn \
+-v $PWD/web/ui:/go/src/github.com/prometheus/prometheus/web/ui \
+-w /go/src/github.com/prometheus/prometheus/web/ui \
+registry.cn-qingdao.aliyuncs.com/wod/devops-node:v16.18.1-bullseye \
+yarn && yarn build
 
 docker run -it \
 --rm \
