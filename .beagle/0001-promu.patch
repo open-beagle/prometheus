@@ -1,0 +1,25 @@
+From 59de1c7d1e3efeb2d5aeb3dd3702135eda4dc70e Mon Sep 17 00:00:00 2001
+From: shucheng <shucheng@bd-apaas.com>
+Date: Fri, 3 Feb 2023 10:07:50 +0800
+Subject: [PATCH] promu
+
+---
+ Makefile.common | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.common b/Makefile.common
+index e358db69c..c5919d42d 100644
+--- a/Makefile.common
++++ b/Makefile.common
+@@ -56,7 +56,7 @@ endif
+ endif
+ 
+ PROMU_VERSION ?= 0.14.0
+-PROMU_URL     := https://github.com/prometheus/promu/releases/download/v$(PROMU_VERSION)/promu-$(PROMU_VERSION).$(GO_BUILD_PLATFORM).tar.gz
++PROMU_URL     := https://cache.wodcloud.com/vscode/prometheus/promu/promu-$(PROMU_VERSION).$(GO_BUILD_PLATFORM).tar.gz
+ 
+ SKIP_GOLANGCI_LINT :=
+ GOLANGCI_LINT :=
+-- 
+2.25.1
+

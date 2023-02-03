@@ -38,6 +38,7 @@ steps:
     environment:
       GO111MODULE: auto
     commands:
+      - git apply .beagle/0001-promu.patch
       - bash .beagle/build.sh
 
   - name: docker-amd64
