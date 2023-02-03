@@ -1,9 +1,6 @@
 kind: pipeline
 name: docker
 
-platform:
-  runner: 10.11.92.33
-
 volumes:
   - name: docker
     host:
